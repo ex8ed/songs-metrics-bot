@@ -50,6 +50,12 @@ async def start(message: types.Message):
         await bot.send_message(message.from_user.id, config.start_message, reply_markup=markups.mood_chooser)
 
 
+@dp.message_handler(commands=['help'])
+async def start(message: types.Message):
+    if message.chat.type == 'private':
+        await bot.send_message(message.from_user.id, config.help_message)
+
+
 # returning mood status callbacks:
 @dp.callback_query_handler(text='btn_mood_drive')
 async def get_mood_drive(message: types.Message):
