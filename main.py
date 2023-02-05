@@ -7,7 +7,7 @@ from aiogram import Bot, executor, types, Dispatcher
 
 
 # you should add token in environment
-API_TOKEN = os.getenv("bot-api-token")
+API_TOKEN = os.getenv("bot_api_token")
 # parameters for calculate results
 params = {}
 
