@@ -16,23 +16,23 @@ dp = Dispatcher(bot)
 
 
 # main algorythm
-def generate_playlist(params: dict):
+def generate_playlist(params_: dict):
     accept = []
     for key in config.metrics.keys():
         n = 0
-        if config.metrics[key][0] == params['MOOD']:
+        if config.metrics[key][0] == params_['MOOD']:
             n += 1
-        if config.metrics[key][1] == params['ZODIAC']:
+        if config.metrics[key][1] == params_['ZODIAC']:
             n += 1
-        if config.metrics[key][2] == params['EVENT']:
+        if config.metrics[key][2] == params_['EVENT']:
             n += 1
-        if config.metrics[key][3] == params['FOS']:
+        if config.metrics[key][3] == params_['FOS']:
             n += 1
-        if config.metrics[key][4] == params['AGE']:
+        if config.metrics[key][4] == params_['AGE']:
             n += 1
-        if config.metrics[key][5] == params['CLIP']:
+        if config.metrics[key][5] == params_['CLIP']:
             n += 1
-        if config.metrics[key][6] == params['MEN']:
+        if config.metrics[key][6] == params_['MEN']:
             n += 1
         if n >= 4:
             accept.append(key)
