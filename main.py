@@ -5,7 +5,7 @@ import config
 import markups
 from aiogram import Bot, executor, types, Dispatcher
 
-
+PROXY_URL = "http://proxy.server:3128"
 # you should add token in environment
 API_TOKEN = os.getenv("bot_api_token")
 # parameters for calculate results
@@ -13,7 +13,7 @@ params = {}
 
 # Basic parameters
 basicConfig(level=INFO)
-bot = Bot(API_TOKEN)
+bot = Bot(API_TOKEN, proxy=PROXY_URL)
 dp = Dispatcher(bot)
 
 
@@ -302,4 +302,4 @@ async def get_mood_drive(message: types.Message):
 
 
 if __name__ == '__main__':
-    executor.start_polling(dp, skip_updates=True)
+    executor.start_polling(dp, skip_updates=True, relax=0.5)
