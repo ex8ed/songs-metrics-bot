@@ -41,7 +41,8 @@ def generate_playlist(params_: dict):
     if len(accept) == 0:
         return 'К сожалению подходящих песен не нашлось. Будьте счастливы с целой психикой. Введите /start для повтора.'
     else:
-        return f'Да простит Господь, советую вам послушать: {", ".join(accept)}'
+        next_line = '\n'
+        return f'Да простит Господь, советую вам послушать:{next_line}{f",{next_line}".join(accept)}'
 
 
 @dp.message_handler(commands=['start'])
