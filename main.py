@@ -37,7 +37,7 @@ def generate_playlist(params_: dict):
         if config.metrics[key][6] == params_['MEN']:
             n += 1
         if n >= 4:
-            accept.append(key)
+            accept.append(f"{key} - {config.song_links[key]}")
     if len(accept) == 0:
         return 'К сожалению подходящих песен не нашлось. Будьте счастливы с целой психикой. Введите /start для повтора.'
     else:
